@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food_Cafe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- INTERNAL CSS -->
+    <style>
+        :root {
+            --primaryColor: #0e6253;
+            --secondaryColor: #ffc107;
+            --whiteColor: #fff;
+            --blackColor: #222;
+            --softGreenColor: #d9f2ee;
+            --darkGreyColor: #a7a7a7;
+            --greyColor: #f5fff5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--softGreenColor);
+            width: 100%;
+            height: auto;
+        }
+
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 2%;
+            background-color: var(--primaryColor);
+            color: var(--whiteColor);
+        }
+
+        .main {
+            height: 100%;
+            min-height: 100vh;
+            width: calc(100% - 250px);
+            padding: 2rem;
+            background-color: var(--softGreenColor); /* Soft green background */
+            margin-left: 250px;
+        }
+
+        .logo {
+            background-color: red;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--whiteColor);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .sidebar-menus {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-menus a,
+        .sidebar-logout a {
+            padding: 10px;
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--whiteColor);
+            transition: background 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .sidebar-menus a:hover,
+        .sidebar-logout a:hover {
+            background-color: var(--secondaryColor);
+            color: var(--blackColor);
+        }
+
+        .main-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .search input {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-btn {
+            padding: 0.5rem 1rem;
+            background-color: var(--primaryColor);
+            color: var(--whiteColor);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .profile a {
+            margin-left: 1rem;
+            font-size: 1.5rem;
+            color: var(--blackColor);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h1 class="logo">FoodApp</h1>
+
+        <div class="sidebar-menus">
+            <a href="#"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a href="#"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
+            <a href="#"><ion-icon name="wallet-outline"></ion-icon>Wallet</a>
+            <a href="#"><ion-icon name="notifications-outline"></ion-icon>Notifications</a>
+            <a href="#"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+            <a href="#"><ion-icon name="settings-outline"></ion-icon>Settings</a>
+        </div>
+
+        <div class="sidebar-logout">
+            <a href="#"><ion-icon name="log-out-outline"></ion-icon>LogOut</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <div class="main-navbar">
+            <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+
+            <!-- Search bar -->
+            <div class="search">
+                <input type="text" placeholder="mag search nang gusto mo">
+                <button class="search-btn">Search</button>
+            </div>
+
+            <!-- Profile section -->
+            <div class="profile">
+                <a class="cart" href="#"><ion-icon name="cart-outline"></ion-icon></a>
+                <a class="user" href="#"><ion-icon name="person-outline"></ion-icon></a>
+            </div>
+        </div>
+
+        <!-- You can add more content here inside the main -->
+
+    </div>
+
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
