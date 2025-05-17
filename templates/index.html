@@ -44,6 +44,7 @@
             padding: 2%;
             background-color: var(--primaryColor);
             color: var(--whiteColor);
+            transition: transform 0.3s ease-in-out;
         }
 
         .main {
@@ -53,6 +54,7 @@
             padding: 2rem;
             background-color: var(--softGreenColor); /* Soft green background */
             margin-left: 250px;
+            transition: margin-left 0.3s ease-in-out;
         }
 
         .logo {
@@ -121,12 +123,111 @@
             font-size: 1.5rem;
             color: var(--blackColor);
         }
+
+        /* hide toggle by creating a hide btn */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primaryColor);
+        }
+
+        /* Styling search part */
+        .search {
+            width: 60%;
+            height: 40px;
+            display: flex;
+            justify-content: space-around;
+            background-color: var(--whiteColor);
+            border-radius: 20px;
+        }
+
+        .search input {
+            width: 80%;
+            height: 100%;
+            padding: 20px;
+            border: none;
+            border-radius: 20px;
+        }
+
+        .search-btn {
+            background-color: var(--secondaryColor);
+            color: var(--whiteColor);
+            border: none;
+            border-radius: 20px;
+            width: 120px;
+            cursor: pointer;
+        }
+
+        .search:hover {
+            box-shadow: rgba(149, 157,165, 0.2) 0px 8px 24px;
+        }
+
+        .search-btn:hover {
+            background-color: var(--primaryColor);
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cart, .user {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--whiteColor);
+            font-size: 20px;
+            color: var(--primaryColor);
+            text-decoration: none;
+            padding: 0 10px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .cart:hover, .user:hover {
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+
+        .main-highlight{
+            margin: 3% 0;
+            padding: 2%;
+            background-color: var(--secondaryColor);
+            border-radius: 8px;
+
+        }
+
+        .main-header{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        .main-title{
+            font-size: 20px;
+            
+        }
+
+        .main-arrow {
+            font-size: 24px;
+        }
+
+        .back, .next {
+            cursor: pointer;
+        }
+
+        .back:hover, .forward:hover {
+            background-color: var(--primaryColor);
+
+        }
     </style>
 </head>
 <body>
 
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
         <h1 class="logo">FoodApp</h1>
 
         <div class="sidebar-menus">
@@ -146,7 +247,7 @@
     <!-- Main Content -->
     <div class="main">
         <div class="main-navbar">
-            <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+            <ion-icon class="menu-toggle" name="menu-outline" id="menu-toggle"></ion-icon>
 
             <!-- Search bar -->
             <div class="search">
@@ -161,12 +262,38 @@
             </div>
         </div>
 
-        <!-- You can add more content here inside the main -->
-
+        <!-- my main higlights -->
+         <div class="main-highlight">
+            <!--su title section tapos su sa my arrow para duamn sa gigibuhin na recomendation section-->
+            <div class="main-header">
+                <h2 class="main-title">Recomendations</h2>
+                <div class="main-arrow">
+                    <ion-icon class="back" name="chevron-back-circle-outline"></ion-icon>
+                    <ion-icon class="forward" name="chevron-forward-circle-outline"></ion-icon>
+                </div>
+            </div>
+            
+            <!--highligt menu man-->
+            <div class="highlight-wrapper">
+                <div class="highlight-card">
+                    <img class="highlight-img" src="1.jpg">
+                </div>
+            </div>
+         </div>
+       
     </div>
 
     <!-- Ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</body>
-</html>
+
+    <!-- Sidebar Toggle Script -->
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+
+        toggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    </script>
+</
