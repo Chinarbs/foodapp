@@ -32,8 +32,9 @@
 
             <!-- Search bar -->
             <div class="search">
-                <input type="text" placeholder="mag search nang gusto mo">
-                <button class="search-btn">Search</button>
+                <!-- Added id and name attributes for the search input field -->
+                <input type="text" id="search" name="search" placeholder="mag search nang gusto mo" autocomplete="on">
+                <button class="search-btn" type="submit">Search</button>
             </div>
 
             <!-- Profile section -->
@@ -242,8 +243,14 @@
     </div> <!-- close main -->
 
     <!-- Ionicons -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
 </body>
-</html>
+
+<!-- Ionicons -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<!-- jQuery (optional, if you're using it) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Your custom JavaScript file -->
+<script src="food.js"></script>

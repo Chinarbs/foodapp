@@ -214,27 +214,28 @@
         }
 
         .highlight-wrapper {
-            width: 100%;
             display: flex;
-            padding: 1%;
-            border-radius: 8px;
-            gap: 1.5rem;
-
+            overflow-x: auto;
+            gap: 1rem;
+            padding: 1rem 0;
+            scroll-behavior: smooth;
         }
 
         .highlight-card {
             display: flex;
             flex-direction: row;
-            min-width: 200px;
-            width: 80%;
-            height: 100%;
+            flex: 0 0 auto;
+            min-width: 180px;
+            max-width: 240px;
             gap: 1rem;
-            border-radius: 8%;
+            border-radius: 8px;
             padding: 1%;
             background-color: var(--greyColor);
             cursor: pointer;
-
         }
+
+
+
 
         .highlight-img {
             width: 40px;
@@ -412,25 +413,51 @@
         .detail-card:hover .price {
             letter-spacing: 1.5px;
         }
+
+        @media screen and (max-width:640px) {
+            .sidebar {
+                display: none;
+            }
+
+            .main {
+                margin-left: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                text-decoration: none;
+                font-size: 20px;
+                background-color: var(--whiteColor);
+                color: var(--primaryColor);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0 10px;
+                height: 40px;
+                border-radius: 50%;
+                z-index: 3;
+            }
+            .sidebar-active{
+                display: flex;
+                z-index: 10;
+            }
+
+            .main-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .main-arrow {
+                align-self: flex-end;
+            }
+
+            body {
+                overflow-x: hidden;
+            }
+
+        }
         
-        @media (max-width: 768px) {
-        .main-highlight {
-            padding: 1rem;
-             margin-left: 0;
-             margin-right: 0;
-             width: 100%;
-            box-sizing: border-box;
-        }
-
-        .highlight-wrapper {
-            flex-direction: column;
-            width: 100%;
-        }
-
-        .highlight-card {
-             width: 100%;
-        }
-    }
 
 
 
